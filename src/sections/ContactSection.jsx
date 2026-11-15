@@ -24,7 +24,7 @@ export const ContactSection = () => {
     const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
 
     window.location.href =
-      `mailto:your.email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      `mailto:dhanushskms11@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -59,9 +59,9 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-slate-500 text-sm">Email</p>
-                  <a href="mailto:your.email@example.com"
+                  <a href="dhanushskms11@gmail.com"
                     className="text-slate-200 hover:text-cyan-400 transition-colors">
-                    your.email@example.com
+                    dhanushskms11@gmail.com
                   </a>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export const ContactSection = () => {
                   <p className="text-slate-500 text-sm">Phone</p>
                   <a href="tel:+910000000000"
                     className="text-slate-200 hover:text-cyan-400 transition-colors">
-                    +91 XXXXX XXXXX
+                    +91 6383853508
                   </a>
                 </div>
               </div>

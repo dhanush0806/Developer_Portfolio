@@ -6,12 +6,12 @@ import { Award, ChevronLeft, ChevronRight } from "lucide-react";
 
 const certifications = [
   {
-    title: "Java Programming",
-    issuer: "Issuing Organization",
-    date: "January 2025",
-    type: "PDF",
-    link: "/certificates/java-certificate.pdf",
-  },
+  title: "Java (Basic)",
+  issuer: "HackerRank",
+  date: "September 2026",
+  type: "Technical Certification",
+  link: "https://www.hackerrank.com/certificates/22e2298eae22"
+},
   {
     title: "Python Programming",
     issuer: "Issuing Organization",
