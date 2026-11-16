@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, MapPin, Briefcase } from "lucide-react";
 import { Github, Linkedin, Email } from "./BrandIcons";
-import heroImage from "../assets/hero.png";
+import heroImage from "../assets/hero2.png";
 
 export const HeroSection = ({ heroVisible, scrollTo }) => {
   const [imgError, setImgError] = useState(false);
@@ -13,9 +13,9 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
     >
       <div className="max-w-6xl w-full mx-auto grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         
-        {/* Left Column: Round Profile Photo + View Work / Contact + Social Icons */}
+        {/* Left Column: Photo + Professional Info */}
         <div
-          className={`lg:col-span-5 flex flex-col items-center space-y-6 transition-all duration-1000 ${
+          className={`lg:col-span-5 flex flex-col items-center space-y-5 transition-all duration-1000 ${
             heroVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >
@@ -29,7 +29,7 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
               {!imgError ? (
                 <img
                   src={heroImage}
-                  alt="Dhanush K"
+                  alt="Dhanush Kathirvel"
                   className="w-full h-full object-cover object-top filter contrast-[1.03] transition-transform duration-500 group-hover:scale-105"
                   onError={() => setImgError(true)}
                 />
@@ -40,71 +40,38 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
               )}
 
               {/* Bottom subtle dark vignette */}
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent pointer-events-none" />
-
-              {/* Name Tag at bottom of circle */}
-              <div className="absolute bottom-3 inset-x-0 flex justify-center pointer-events-none">
-                <span className="px-3.5 py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-slate-800/80 text-xs font-mono text-cyan-400 font-semibold shadow-md">
-                  Dhanush K
-                </span>
-              </div>
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-slate-950/80 to-transparent pointer-events-none" />
             </div>
           </div>
 
-          {/* Action Buttons Directly Below Image */}
-          <div className="flex flex-wrap items-center justify-center gap-3 w-full">
-            <button
-              onClick={() => scrollTo("projects")}
-              className="px-6 py-3 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.5)] hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group tracking-wide cursor-pointer text-xs sm:text-sm"
-            >
-              <span>View Work</span>
-              <ChevronRight
-                size={16}
-                className="group-hover:translate-x-1.5 transition-transform duration-300"
-              />
-            </button>
+          {/* Professional Details below Photo */}
+          <div className="flex flex-col items-center text-center space-y-2 pt-1">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Dhanush Kathirvel
+            </h2>
 
-            <button
-              onClick={() => scrollTo("contact")}
-              className="px-6 py-3 rounded-xl border border-slate-700 bg-slate-900/60 text-white font-semibold hover:border-cyan-400 hover:text-cyan-400 hover:bg-slate-800 transition-all duration-300 text-xs sm:text-sm tracking-wide cursor-pointer"
-            >
-              Contact Me
-            </button>
-          </div>
+            <div className="flex items-center justify-center gap-2 flex-wrap">
+              <span className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono flex items-center gap-1.5">
+                <Briefcase size={14} className="text-cyan-400" />
+                Full Stack Developer
+              </span>
+              <span className="text-slate-600 hidden sm:inline">•</span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Fresher
+              </span>
+            </div>
 
-          {/* Social Media Icons Directly Below Buttons */}
-          <div className="flex items-center justify-center gap-3">
-            <a
-              href="https://github.com/dhanush0806"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-600 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-              aria-label="GitHub"
-            >
-              <Github size={19} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-400 hover:text-[#0A66C2] hover:border-[#0A66C2]/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={19} />
-            </a>
-            <a
-              href="mailto:dhanushskms11@gmail.com"
-              className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-400 hover:text-[#EA4335] hover:border-[#EA4335]/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-              aria-label="Email"
-            >
-              <Email size={19} />
-            </a>
+            <div className="flex items-center justify-center gap-1.5 text-xs text-slate-400 font-mono">
+              <MapPin size={13} className="text-cyan-400/90" />
+              <span>Tiruchirappalli, Tamil Nadu</span>
+            </div>
           </div>
         </div>
 
-        {/* Right Column: Title, Intro & Core Stack */}
+        {/* Right Column: Title, Intro, Core Stack & Action Buttons/Socials */}
         <div
-          className={`lg:col-span-7 space-y-6 sm:space-y-8 transition-all duration-1000 delay-200 ${
+          className={`lg:col-span-7 space-y-6 sm:space-y-7 transition-all duration-1000 delay-200 ${
             heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -135,6 +102,56 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
                   {tech}
                 </span>
               ))}
+            </div>
+          </div>
+
+          {/* Action Buttons & Social Icons directly below Core Stack */}
+          <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-5">
+            <button
+              onClick={() => scrollTo("projects")}
+              className="px-7 py-3 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.5)] hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group tracking-wide cursor-pointer text-xs sm:text-sm"
+            >
+              <span>View Work</span>
+              <ChevronRight
+                size={16}
+                className="group-hover:translate-x-1.5 transition-transform duration-300"
+              />
+            </button>
+
+            <button
+              onClick={() => scrollTo("contact")}
+              className="px-7 py-3 rounded-xl border border-slate-700 bg-slate-900/60 text-white font-semibold hover:border-cyan-400 hover:text-cyan-400 hover:bg-slate-800 transition-all duration-300 text-xs sm:text-sm tracking-wide cursor-pointer"
+            >
+              Contact Me
+            </button>
+
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-2.5 sm:pl-3 sm:border-l sm:border-slate-800">
+              <a
+                href="https://github.com/dhanush0806"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-600 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                aria-label="GitHub"
+              >
+                <Github size={19} />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-400 hover:text-[#0A66C2] hover:border-[#0A66C2]/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={19} />
+              </a>
+              <a
+                href="mailto:dhanushskms11@gmail.com"
+                className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-400 hover:text-[#EA4335] hover:border-[#EA4335]/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                aria-label="Email"
+              >
+                <Email size={19} />
+              </a>
             </div>
           </div>
         </div>
