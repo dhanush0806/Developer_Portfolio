@@ -1,50 +1,26 @@
 import React, { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { Github, Linkedin, Email } from "./BrandIcons";
-import { CodeEditor } from "./CodeEditor";
 // PASTE ORIGINAL PROFILE PICTURE IN src/assets/hero.png OR CHANGE PATH
 import heroImage from "../assets/hero.png";
 
-export const HeroSection = ({ heroVisible, scrollTo, typedCode }) => {
+export const HeroSection = ({ heroVisible, scrollTo }) => {
   const [imgError, setImgError] = useState(false);
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-24 sm:pt-28 pb-12 px-4 sm:px-6"
+      className="min-h-screen flex items-center justify-center pt-24 sm:pt-28 pb-16 px-4 sm:px-6"
     >
-      <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        {/* Left Content */}
-        <div className="space-y-6 sm:space-y-8">
-          {/* Profile Picture & Status Badge */}
+      <div className="max-w-6xl w-full grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        
+        {/* Left Content (7 cols on lg) */}
+        <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+          
+          {/* Status Badge */}
           <div
-            className={`flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 transition-all duration-1000 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`transition-all duration-1000 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
-            <div className="relative group cursor-pointer shrink-0">
-              <div className="absolute inset-0 bg-cyan-500/30 rounded-full blur-xl group-hover:bg-cyan-400/50 transition-all duration-500 animate-pulse"></div>
-
-              <div className="relative h-20 w-20 sm:h-24 sm:w-24 rounded-full border-2 border-cyan-500/50 overflow-hidden bg-slate-900 flex items-center justify-center transform group-hover:scale-105 transition-all duration-500 shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                {!imgError ? (
-                  <img
-                    src={heroImage}
-                    alt="Dhanush K"
-                    className="h-full w-full object-cover object-top"
-                    onError={() => setImgError(true)}
-                  />
-                ) : (
-                  <svg
-                    className="h-14 w-14 sm:h-16 sm:w-16 text-slate-400 mt-3 sm:mt-4 group-hover:text-cyan-300 transition-colors duration-500"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                )}
-              </div>
-
-              <div className="absolute bottom-1 right-1 h-4 w-4 sm:h-5 sm:w-5 rounded-full border-[3px] border-slate-950 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
-            </div>
-
-            <div className="inline-flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-800 text-xs sm:text-sm font-mono text-cyan-400 self-start sm:self-center shadow-lg">
+            <div className="inline-flex items-center gap-2.5 sm:gap-3 px-4 py-2 rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-800 text-xs sm:text-sm font-mono text-cyan-400 shadow-lg">
               <span className="relative flex h-2 sm:h-2.5 w-2 sm:w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 sm:h-2.5 w-2 sm:w-2.5 bg-cyan-500"></span>
@@ -116,12 +92,45 @@ export const HeroSection = ({ heroVisible, scrollTo, typedCode }) => {
           </div>
         </div>
 
-        {/* Code Editor */}
+        {/* Right Content - Elegant Round / Oval Portrait Frame (5 cols on lg) */}
         <div
-          className={`transition-all duration-1000 delay-400 ${heroVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+          className={`lg:col-span-5 flex justify-center items-center transition-all duration-1000 delay-300 ${heroVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
         >
-          <CodeEditor typedCode={typedCode} />
+          <div className="relative group">
+            
+            {/* Ambient Multi-color Glow Ring */}
+            <div className="absolute -inset-3 bg-gradient-to-tr from-cyan-500/30 via-blue-600/20 to-purple-600/20 rounded-full blur-2xl group-hover:blur-3xl group-hover:from-cyan-500/45 group-hover:to-blue-500/35 transition-all duration-700"></div>
+
+            {/* Glowing Gradient Border Ring */}
+            <div className="relative p-2 rounded-full bg-gradient-to-b from-cyan-500/40 via-slate-800/80 to-slate-900/40 shadow-2xl backdrop-blur-sm">
+              
+              {/* Circular Photo Container */}
+              <div className="relative h-60 w-60 sm:h-72 sm:w-72 md:h-80 md:w-80 rounded-full overflow-hidden border-2 border-slate-800 bg-slate-950 shadow-inner flex items-center justify-center">
+                {!imgError ? (
+                  <img
+                    src={heroImage}
+                    alt="Dhanush K - Full-Stack Developer"
+                    className="w-full h-full object-cover object-top filter brightness-105 group-hover:scale-105 transition-transform duration-500 ease-out"
+                    onError={() => setImgError(true)}
+                  />
+                ) : (
+                  <div className="h-full w-full flex items-center justify-center text-slate-600 font-mono text-sm">
+                    Dhanush K
+                  </div>
+                )}
+              </div>
+
+              {/* Centered Floating Status Pill */}
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-slate-950/90 backdrop-blur-md border border-slate-800 shadow-xl flex items-center gap-2.5 whitespace-nowrap">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.9)] animate-pulse"></span>
+                <span className="text-xs font-mono font-medium text-slate-200">Full-Stack Developer</span>
+              </div>
+
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
   );

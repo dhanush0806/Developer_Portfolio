@@ -8,8 +8,7 @@ import { ExperienceSection } from './sections/ExperienceSection';
 import { EducationSection } from './sections/EducationSection';
 import { Footer } from './components/Footer';
 import { CertificationsSection } from './sections/CertificationsSection';
-import { useTypewriter } from './hooks/useTypewriter';
-import{ContactSection} from './sections/ContactSection';
+import { ContactSection } from './sections/ContactSection';
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -21,20 +20,6 @@ export default function App() {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
-
-  const codeString = `const developer = {
-  name           : "Dhanush K",
-  qualification  : "B.E. Computer Science",
-  role           : "Full-Stack Developer",
-  location       : "Tamil Nadu, India",
-  openToRelocate : true,
-  employmentType : "Internship / Full-Time",
-  status         : "Available Immediately"
-};
-
-developer.initialize();`;
-
-  const typedCode = useTypewriter(codeString, 35, 800);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -125,7 +110,7 @@ developer.initialize();`;
 
       {/* Main Content Sections */}
       <main className="relative z-10 pt-20">
-        <HeroSection heroVisible={heroVisible} scrollTo={scrollTo} typedCode={typedCode} />
+        <HeroSection heroVisible={heroVisible} scrollTo={scrollTo} />
         <AboutSection />
         <ProjectsSection />
         <ExperienceSection />
