@@ -10,10 +10,12 @@ import { EducationSection } from './sections/EducationSection';
 import { Footer } from './components/Footer';
 import { CertificationsSection } from './sections/CertificationsSection';
 import { ContactSection } from './sections/ContactSection';
+
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [heroVisible, setHeroVisible] = useState(false);
+  const [photoProgress, setPhotoProgress] = useState(0);
 
   useEffect(() => {
     setTimeout(() => setHeroVisible(true), 150);
@@ -22,6 +24,7 @@ export default function App() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  // Track scroll position for active section & smooth photo flight progress
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'certifications', 'contact'];
@@ -39,9 +42,18 @@ export default function App() {
           }
         }
       }
+
+      // Calculate photo flight progress between Hero and About
+      const aboutEl = document.getElementById("about");
+      if (aboutEl) {
+        const aboutTop = aboutEl.offsetTop;
+        // Progress reaches 1.0 when the user scrolls near the About section
+        const progress = Math.min(1, Math.max(0, window.scrollY / Math.max(1, aboutTop - 180)));
+        setPhotoProgress(progress);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -111,8 +123,8 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main className="relative z-10 pt-20">
-        <HeroSection heroVisible={heroVisible} scrollTo={scrollTo} />
-        <AboutSection />
+        <HeroSection heroVisible={heroVisible} scrollTo={scrollTo} photoProgress={photoProgress} />
+        <AboutSection photoProgress={photoProgress} />
         <SkillsSection />
         <ProjectsSection />
         <ExperienceSection />
