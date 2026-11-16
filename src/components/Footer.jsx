@@ -1,7 +1,7 @@
 import React from "react";
 import { Code2 } from "lucide-react";
 import { Github, Linkedin, Email } from "./BrandIcons";
-import { SiGmail } from "react-icons/si";
+
 export const Footer = () => {
   return (
     <footer className="py-12 text-center border-t border-slate-800 bg-slate-950 flex flex-col items-center gap-8 relative z-10">
@@ -15,8 +15,9 @@ export const Footer = () => {
         >
           <Github size={22} />
         </a>
+        {/* PASTE ORIGINAL LINKEDIN LINK HERE */}
         <a
-          href="https://linkedin.com"
+          href="https://linkedin.com/in/YOUR_LINKEDIN_PROFILE"
           target="_blank"
           rel="noreferrer"
           className="p-3 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-[#0A66C2] hover:bg-slate-800 hover:-translate-y-1.5 hover:shadow-[0_0_15px_rgba(10,102,194,0.2)] transition-all duration-300"
@@ -24,12 +25,11 @@ export const Footer = () => {
         >
           <Linkedin size={22} />
         </a>
+        {/* PASTE ORIGINAL EMAIL LINK HERE */}
         <a
-          href="mailto:your-email@gmail.com"
-         target="_blank"
-          rel="noreferrer"
-          className="p-3 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-[#EA4335] hover:bg-slate-800 hover:-translate-y-1.5 hover:shadow-[0_0_15px_rgba(10,102,194,0.2)] transition-all duration-300"
-         aria-label="Email"
+          href="mailto:dhanushskms11@gmail.com"
+          className="p-3 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-[#EA4335] hover:bg-slate-800 hover:-translate-y-1.5 hover:shadow-[0_0_15px_rgba(234,67,53,0.2)] transition-all duration-300"
+          aria-label="Email"
         >
           <Email size={22} />
         </a>
@@ -38,7 +38,7 @@ export const Footer = () => {
       <p className="text-slate-400 text-sm font-mono flex items-center justify-center gap-2 group tracking-wide">
         Built with React & Tailwind{" "}
         <Code2 size={16} className="text-cyan-500 group-hover:animate-spin" />{" "}
-        by You
+        by Dhanush K
       </p>
     </footer>
   );

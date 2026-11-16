@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { Github, Linkedin, Email } from "./BrandIcons";
 import { CodeEditor } from "./CodeEditor";
+// PASTE ORIGINAL PROFILE PICTURE IN src/assets/hero.png OR CHANGE PATH
+import heroImage from "../assets/hero.png";
 
 export const HeroSection = ({ heroVisible, scrollTo, typedCode }) => {
+  const [imgError, setImgError] = useState(false);
   return (
     <section
       id="home"
@@ -20,13 +23,22 @@ export const HeroSection = ({ heroVisible, scrollTo, typedCode }) => {
               <div className="absolute inset-0 bg-cyan-500/30 rounded-full blur-xl group-hover:bg-cyan-400/50 transition-all duration-500 animate-pulse"></div>
 
               <div className="relative h-24 w-24 rounded-full border-2 border-cyan-500/50 overflow-hidden bg-slate-900 flex items-center justify-center transform group-hover:scale-105 transition-all duration-500 shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                <svg
-                  className="h-16 w-16 text-slate-400 mt-4 group-hover:text-cyan-300 transition-colors duration-500"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
+                {!imgError ? (
+                  <img
+                    src={heroImage}
+                    alt="Dhanush K"
+                    className="h-full w-full object-cover object-top"
+                    onError={() => setImgError(true)}
+                  />
+                ) : (
+                  <svg
+                    className="h-16 w-16 text-slate-400 mt-4 group-hover:text-cyan-300 transition-colors duration-500"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                )}
               </div>
 
               <div className="absolute bottom-1 right-1 h-5 w-5 rounded-full border-[3px] border-slate-950 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
@@ -46,15 +58,13 @@ export const HeroSection = ({ heroVisible, scrollTo, typedCode }) => {
             className={`space-y-6 transition-all duration-1000 delay-200 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Engineering <br />
+              Hi, I'm  <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-gradient-x">
-                Digital Reality.
+                Dhanush K.
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-300 max-w-xl leading-[1.8] font-light">
-              I'm a Computer Science graduate passionate about building modern
-              web applications, writing clean code, and creating useful digital
-              solutions.
+             Computer Science graduate passionate about building clean, functional web applications and solving real-world problems. Always curious, adaptable, and eager to learn.
             </p>
           </div>
 
@@ -83,8 +93,9 @@ export const HeroSection = ({ heroVisible, scrollTo, typedCode }) => {
               >
                 <Github size={22} />
               </a>
+              {/* PASTE ORIGINAL LINKEDIN LINK HERE */}
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/YOUR_LINKEDIN_PROFILE"
                 target="_blank"
                 rel="noreferrer"
                 className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-[#0A66C2] hover:border-[#0A66C2]/50 hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300"
@@ -93,8 +104,9 @@ export const HeroSection = ({ heroVisible, scrollTo, typedCode }) => {
                 <Linkedin size={22} />
               </a>
 
+              {/* PASTE ORIGINAL EMAIL LINK HERE */}
               <a
-                href="mailto:your-email@gmail.com"
+                href="mailto:dhanushskms11@gmail.com"
                 className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-[#EA4335] hover:border-[#EA4335]/50 hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300"
                 aria-label="Email"
               >

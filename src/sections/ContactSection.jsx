@@ -59,7 +59,8 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-slate-500 text-sm">Email</p>
-                  <a href="dhanushskms11@gmail.com"
+                  {/* PASTE ORIGINAL EMAIL HERE */}
+                  <a href="mailto:dhanushskms11@gmail.com"
                     className="text-slate-200 hover:text-cyan-400 transition-colors">
                     dhanushskms11@gmail.com
                   </a>
@@ -72,7 +73,8 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-slate-500 text-sm">Phone</p>
-                  <a href="tel:+910000000000"
+                  {/* PASTE ORIGINAL PHONE NUMBER HERE */}
+                  <a href="tel:+916383853508"
                     className="text-slate-200 hover:text-cyan-400 transition-colors">
                     +91 6383853508
                   </a>

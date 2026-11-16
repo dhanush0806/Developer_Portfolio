@@ -1,37 +1,43 @@
-
 import React, { useState } from "react";
 import { SectionHeader } from "../components/SectionHeader";
 import { SpotlightCard } from "../components/SpotlightCard";
 import { Award, ChevronLeft, ChevronRight } from "lucide-react";
 
+// PASTE ORIGINAL CERTIFICATE FILES IN public/certificates/ OR PASTE EXTERNAL LINKS
 const certifications = [
   {
-  title: "Java (Basic)",
-  issuer: "HackerRank",
-  date: "September 2026",
-  type: "Technical Certification",
-  link: "https://www.hackerrank.com/certificates/22e2298eae22"
-},
+    title: "Java (Basic)",
+    issuer: "HackerRank",
+    date: "September 2026",
+    type: "Technical Certification",
+    // ORIGINAL HACKERRANK LINK
+    link: "https://www.hackerrank.com/certificates/22e2298eae22",
+  },
   {
     title: "Python Programming",
+    // PASTE ORIGINAL ISSUER (e.g. Coursera / Udemy / Infosys Springboard)
     issuer: "Issuing Organization",
     date: "April 2025",
     type: "Image",
+    // PASTE ORIGINAL FILE IN public/certificates/python-certificate.jpg OR PASTE LINK
     link: "/certificates/python-certificate.jpg",
   },
   {
     title: "Web Development",
+    // PASTE ORIGINAL ISSUER
     issuer: "Issuing Organization",
     date: "June 2025",
     type: "PDF",
+    // PASTE ORIGINAL FILE IN public/certificates/web-certificate.pdf OR PASTE LINK
     link: "/certificates/web-certificate.pdf",
   },
-  
   {
     title: "Full Stack Development",
+    // PASTE ORIGINAL ISSUER
     issuer: "Issuing Organization",
     date: "October 2025",
     type: "Image",
+    // PASTE ORIGINAL FILE IN public/certificates/fullstack-certificate.jpg OR PASTE LINK
     link: "/certificates/fullstack-certificate.jpg",
   },
 ];

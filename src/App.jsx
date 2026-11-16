@@ -38,7 +38,7 @@ developer.initialize();`;
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'experience','education','certifications '];
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'certifications', 'contact'];
       const scrollPosition = window.scrollY + 150;
 
       for (const section of sections) {
