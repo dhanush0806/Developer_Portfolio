@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './sections/AboutSection';
+import { SkillsSection } from './sections/SkillsSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ExperienceSection } from './sections/ExperienceSection';
 import { EducationSection } from './sections/EducationSection';
@@ -112,6 +113,7 @@ export default function App() {
       <main className="relative z-10 pt-20">
         <HeroSection heroVisible={heroVisible} scrollTo={scrollTo} />
         <AboutSection />
+        <SkillsSection />
         <ProjectsSection />
         <ExperienceSection />
         <EducationSection />
