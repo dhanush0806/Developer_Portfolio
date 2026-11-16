@@ -7,7 +7,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 const RevealText = ({ children, delay = 0 }) => {
   const [ref, isVisible] = useScrollReveal(delay);
   return (
-    <p ref={ref} className={`reveal-smooth text-slate-300 text-lg leading-[1.8] font-light max-w-3xl ${isVisible ? 'visible' : ''}`}>
+    <p ref={ref} className={`reveal-smooth text-slate-300 text-base sm:text-lg leading-relaxed sm:leading-[1.8] font-light max-w-3xl ${isVisible ? 'visible' : ''}`}>
       {children}
     </p>
   );
@@ -15,15 +15,15 @@ const RevealText = ({ children, delay = 0 }) => {
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-32 px-6 bg-slate-900/30 border-y border-slate-800/50 relative">
+    <section id="about" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-slate-900/30 border-y border-slate-800/50 relative">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-5 gap-20">
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-20">
           
           {/* Left Column: About Paragraphs */}
-          <div className="lg:col-span-2 space-y-8">
-            <SectionHeader title="About Me" icon={<Terminal size={28} />} />
+          <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+            <SectionHeader title="About Me" icon={<Terminal size={26} />} />
             
-            <div className="space-y-6">
+            <div className="space-y-5 sm:space-y-6">
               <RevealText delay={100}>
                 I'm a Computer Science graduate with a keen interest in full-stack development. I enjoy building responsive web applications, developing efficient solutions, and applying my technical knowledge to real-world challenges.
               </RevealText>
@@ -34,10 +34,10 @@ export const AboutSection = () => {
           </div>
 
           {/* Right Column: Skills Grid */}
-          <div id="skills" className="lg:col-span-3 space-y-10">
-            <SectionHeader title="Technical Arsenal" icon={<Code2 size={28} />} delay={200} />
+          <div id="skills" className="lg:col-span-3 space-y-8 sm:space-y-10">
+            <SectionHeader title="Technical Arsenal" icon={<Code2 size={26} />} delay={200} />
             
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
               <SkillCategory 
                 title="Frontend" 
                 icon={<Layout size={22} className="text-blue-400"/>}
@@ -47,7 +47,7 @@ export const AboutSection = () => {
               <SkillCategory 
                 title="Backend" 
                 icon={<Database size={22} className="text-emerald-400"/>}
-                skills={['Node.js', 'Express.js','java', 'Spring Boot', 'Python', 'REST APIs']}
+                skills={['Node.js', 'Express.js','Java', 'Spring Boot', 'Python', 'REST APIs']}
                 delay={200}
               />
               <SkillCategory 

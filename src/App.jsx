@@ -23,13 +23,13 @@ export default function App() {
   }, []);
 
   const codeString = `const developer = {
-  name            : "Dhanush K",
-  qualification   : "B.E. CSE",
-  role            : "Full-Stack Developer",
-  experienceLevel : "Fresher",
-  workPreference  : "On-Site / Hybrid / Remote",
-  employmentType  : "Internship / Full-Time",
-  availability    : "Open to Opportunities"
+  name           : "Dhanush K",
+  qualification  : "B.E. Computer Science",
+  role           : "Full-Stack Developer",
+  location       : "Tamil Nadu, India",
+  openToRelocate : true,
+  employmentType : "Internship / Full-Time",
+  status         : "Available Immediately"
 };
 
 developer.initialize();`;
@@ -69,7 +69,7 @@ developer.initialize();`;
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 selection:bg-cyan-500/30 font-sans overflow-hidden">
+    <div className="min-h-screen bg-slate-950 text-slate-200 selection:bg-cyan-500/30 font-sans overflow-x-hidden">
       
       {/* INJECTED CUSTOM CSS FOR ANIMATIONS */}
       <style dangerouslySetInnerHTML={{__html: `

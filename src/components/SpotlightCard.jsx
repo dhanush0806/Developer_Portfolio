@@ -42,7 +42,7 @@ export const SpotlightCard = ({ children, className = '', tilt = false }) => {
         transform: tilt ? `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale3d(1, 1, 1)` : 'none',
         transition: 'all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s'
       }}
-      className={`relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 p-8 shadow-2xl hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-500 ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 p-5 sm:p-7 md:p-8 shadow-2xl hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-500 ${className}`}
     >
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-500 ease-in-out"

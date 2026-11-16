@@ -5,11 +5,11 @@ import { ProjectCard } from './ProjectCard';
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-32 px-6">
-      <div className="max-w-6xl mx-auto space-y-16">
-        <SectionHeader title="Featured Projects" icon={<Briefcase size={28} />} />
+    <section id="projects" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto space-y-10 sm:space-y-16">
+        <SectionHeader title="Featured Projects" icon={<Briefcase size={26} />} />
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           
           {/* 1. AssetTrack */}
           {/* PASTE ORIGINAL GITHUB & DEMO LINKS HERE */}

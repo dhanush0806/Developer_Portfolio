@@ -54,17 +54,17 @@ export const CertificationsSection = () => {
   );
 
   return (
-    <section id="certifications" className="py-16 px-6 relative">
+    <section id="certifications" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           title="Certifications"
-          icon={<Award size={28} />}
+          icon={<Award size={26} />}
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
           {visibleCertifications.map((cert, index) => (
-            <SpotlightCard key={cert.title} delay={index * 100}>
-              <div className="p-3">
+            <SpotlightCard key={cert.title} delay={index * 100} className="p-4 sm:p-5">
+              <div>
                 <div className="flex items-center justify-between mb-3">
                   <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
                     <Award size={17} />

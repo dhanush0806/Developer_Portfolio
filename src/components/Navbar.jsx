@@ -28,17 +28,17 @@ export const Navbar = ({ activeSection, scrollTo }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50 transition-all duration-300">
-      <div className="w-full px-6 md:px-8 h-20 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/50 transition-all duration-300">
+      <div className="w-full px-4 sm:px-6 md:px-8 h-16 sm:h-20 flex items-center justify-between">
 
         {/* Logo */}
         <div
-          className="flex items-center gap-3 font-mono font-bold text-xl tracking-tighter group cursor-pointer shrink-0"
+          className="flex items-center gap-2.5 sm:gap-3 font-mono font-bold text-lg sm:text-xl tracking-tighter group cursor-pointer shrink-0"
           onClick={() => scrollTo('home')}
         >
           <Terminal
             className="text-cyan-400 group-hover:rotate-12 transition-transform duration-500"
-            size={24}
+            size={22}
           />
           <span className="group-hover:text-cyan-400 transition-colors duration-300">
             Dev<span className="text-cyan-400">.</span>Portfolio
@@ -91,27 +91,27 @@ export const Navbar = ({ activeSection, scrollTo }) => {
         </div>
 
         {/* Right Actions: Resume & Mobile Hamburger */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           {/* Resume Dropdown */}
           <div className="relative group shrink-0">
             <button
-              className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-slate-700/70 bg-slate-900/60 text-white hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300 text-sm font-semibold"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-slate-700/70 bg-slate-900/60 text-white hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300 text-xs sm:text-sm font-semibold"
             >
-              <FileText size={16} className="text-cyan-400" />
-              Resume
-              <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
+              <FileText size={15} className="text-cyan-400" />
+              <span>Resume</span>
+              <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-300" />
             </button>
 
-            <div className="absolute top-full right-0 pt-3 w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div className="absolute top-full right-0 pt-3 w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div className="rounded-xl border border-slate-800 bg-slate-950/95 backdrop-blur-xl shadow-xl p-2">
                 {/* PASTE ORIGINAL RESUME FILE IN public/resume.pdf OR REPLACE LINK */}
                 <a
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-3 py-3 rounded-lg text-sm text-slate-400 hover:text-cyan-400 hover:bg-slate-800/60 transition-colors"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-cyan-400 hover:bg-slate-800/60 transition-colors"
                 >
-                  <Eye size={17} />
+                  <Eye size={16} />
                   View
                 </a>
 
@@ -119,9 +119,9 @@ export const Navbar = ({ activeSection, scrollTo }) => {
                 <a
                   href="/resume.pdf"
                   download="Dhanush_K_Resume.pdf"
-                  className="flex items-center gap-3 px-3 py-3 rounded-lg text-sm text-slate-400 hover:text-cyan-400 hover:bg-slate-800/60 transition-colors"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-cyan-400 hover:bg-slate-800/60 transition-colors"
                 >
-                  <Download size={17} />
+                  <Download size={16} />
                   Download
                 </a>
               </div>
@@ -134,7 +134,7 @@ export const Navbar = ({ activeSection, scrollTo }) => {
             className="md:hidden p-2 rounded-lg border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-cyan-400 transition-colors"
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
@@ -142,7 +142,7 @@ export const Navbar = ({ activeSection, scrollTo }) => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-800/80 bg-slate-950/95 backdrop-blur-xl px-6 py-4 space-y-2">
+        <div className="md:hidden border-t border-slate-800/80 bg-slate-950/95 backdrop-blur-xl px-4 py-4 space-y-1.5 max-h-[calc(100vh-4.5rem)] overflow-y-auto">
           {[...mainLinks, ...moreLinks].map((item) => (
             <button
               key={item}
