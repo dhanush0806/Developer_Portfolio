@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './sections/AboutSection';
-import { SkillsSection } from './sections/SkillsSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ExperienceSection } from './sections/ExperienceSection';
 import { EducationSection } from './sections/EducationSection';
@@ -15,7 +14,6 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [heroVisible, setHeroVisible] = useState(false);
-  const [photoProgress, setPhotoProgress] = useState(0);
 
   useEffect(() => {
     setTimeout(() => setHeroVisible(true), 150);
@@ -41,15 +39,6 @@ export default function App() {
             setActiveSection(section);
           }
         }
-      }
-
-      // Calculate photo flight progress between Hero and About
-      const aboutEl = document.getElementById("about");
-      if (aboutEl) {
-        const aboutTop = aboutEl.offsetTop;
-        // Progress reaches 1.0 when the user scrolls near the About section
-        const progress = Math.min(1, Math.max(0, window.scrollY / Math.max(1, aboutTop - 180)));
-        setPhotoProgress(progress);
       }
     };
 
@@ -123,9 +112,8 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main className="relative z-10 pt-20">
-        <HeroSection heroVisible={heroVisible} scrollTo={scrollTo} photoProgress={photoProgress} />
-        <AboutSection photoProgress={photoProgress} />
-        <SkillsSection />
+        <HeroSection heroVisible={heroVisible} scrollTo={scrollTo} />
+        <AboutSection />
         <ProjectsSection />
         <ExperienceSection />
         <EducationSection />
