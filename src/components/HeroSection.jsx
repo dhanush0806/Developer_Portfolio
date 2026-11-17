@@ -161,7 +161,7 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
                 <Github size={19} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/dhanush-k-a998a72bb/"
                 target="_blank"
                 rel="noreferrer"
                 className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-400 hover:text-[#0A66C2] hover:border-[#0A66C2]/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
