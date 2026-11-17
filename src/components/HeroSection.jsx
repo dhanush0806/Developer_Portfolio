@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronRight, MapPin, Briefcase } from "lucide-react";
+import { ChevronRight, MapPin, Briefcase, Layers } from "lucide-react";
 import { Github, Linkedin, Email } from "./BrandIcons";
 import heroImage from "../assets/hero2.png";
 
@@ -44,27 +44,43 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
             </div>
           </div>
 
-          {/* Professional Details below Photo */}
-          <div className="flex flex-col items-center text-center space-y-2 pt-1">
+          {/* Details below Photo with Single Open-to-Work Status Badge */}
+          <div className="flex flex-col items-center text-center space-y-2 pt-1 w-full">
+            {/* Name */}
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Dhanush Kathirvel
+              Dhanush K
             </h2>
 
-            <div className="flex items-center justify-center gap-2 flex-wrap">
-              <span className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono flex items-center gap-1.5">
-                <Briefcase size={14} className="text-cyan-400" />
-                Full Stack Developer
-              </span>
-              <span className="text-slate-600 hidden sm:inline">•</span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            {/* Role */}
+            <div className="flex items-center justify-center gap-2 text-sm sm:text-base md:text-lg font-bold text-cyan-400 font-mono">
+              <Briefcase size={16} className="text-cyan-400 shrink-0" />
+              <span>Full Stack Developer</span>
+            </div>
+
+            {/* Fresher - Next line directly below role */}
+            <div className="flex items-center justify-center">
+              <span className="px-3 py-0.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-cyan-300 text-xs sm:text-sm font-mono font-medium tracking-wide">
                 Fresher
               </span>
             </div>
 
-            <div className="flex items-center justify-center gap-1.5 text-xs text-slate-400 font-mono">
-              <MapPin size={13} className="text-cyan-400/90" />
-              <span>Tiruchirappalli, Tamil Nadu</span>
+            {/* Single Prominent Status Badge */}
+            <div className="pt-0.5">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs sm:text-sm font-mono font-semibold bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 shadow-[0_0_14px_rgba(16,185,129,0.2)] backdrop-blur-md">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                </span>
+                <span>Open to Work</span>
+                <span className="text-emerald-500/60 font-bold">•</span>
+                <span>Immediate Joiner</span>
+              </span>
+            </div>
+
+            {/* Location */}
+            <div className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-mono text-slate-300 pt-0.5">
+              <MapPin size={14} className="text-cyan-400 shrink-0" />
+              <span>Tiruchirappalli, TN</span>
             </div>
           </div>
         </div>
@@ -77,27 +93,35 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
         >
           {/* Headline */}
           <div className="space-y-3">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Engineering <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-gradient-x">
-                Digital Reality.
-              </span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-xl leading-[1.8] font-light">
-              I'm a Computer Science graduate passionate about building modern web applications, writing clean code, and creating useful digital solutions.
-            </p>
-          </div>
+  <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+   Hello, I'm< br />
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-gradient-x">
+      Dhanush K
+    </span>
+  </h1>
+  <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-xl leading-[1.8] font-light">
+  A Computer Science graduate passionate about{" "}
+  <span className="text-white font-medium">Full-Stack Development</span>{" "}
+  and building modern web applications. Looking forward to starting my professional journey while learning, building, and growing in the{" "}
+  <span className="text-cyan-400 font-medium">software industry.</span>
+</p>
+</div>
 
           {/* Core Stack Strip */}
           <div className="pt-2">
-            <p className="text-[11px] font-mono uppercase tracking-widest text-slate-400 mb-2.5">
-              Core Stack
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {["Java", "Spring Boot", "React.js", "Node.js", "PostgreSQL", "MySQL", "REST APIs"].map((tech) => (
+            <div className="flex items-center gap-2 mb-2.5">
+              <span className="p-1 rounded-md bg-cyan-500/10 border border-cyan-500/25 text-cyan-400 flex items-center justify-center">
+                <Layers size={13} />
+              </span>
+              <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-slate-200 font-bold">
+                Core Stack
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-2.5">
+              {["React.js", "Node.js", "Express.js", "PostgreSQL", "MySQL", "Mongodb", "Java", "JavaScript", "REST APIs"].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-300"
+                  className="px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-700/70 text-sm font-bold text-white shadow-sm hover:border-cyan-500/50 hover:text-cyan-300 transition-all duration-200"
                 >
                   {tech}
                 </span>
