@@ -14,7 +14,13 @@ export const ExperienceSection = () => {
             date="Jul 2025 – Aug 2025"
             title="Java Fullstack Developer Intern"
             subtitle="Media Wave Technologies"
-            description="Gained practical exposure to Java full-stack development and strengthened my understanding of backend development concepts."
+            description={
+              <ul className="list-disc list-inside space-y-1 text-slate-300">
+                <li>Built and tested basic full-stack web components using Java.</li>
+                <li>Learned and practiced backend concepts like database connections and handling server-side logic.</li>
+                <li>Worked with the team to find and fix bugs in application modules.</li>
+              </ul>
+            }
             isActive={true}
             delay={100}
           />
@@ -22,8 +28,13 @@ export const ExperienceSection = () => {
             date="Jan 2025 – Apr 2025"
             title="Python Developer Intern"
             subtitle="Cybernaut Edu-Tech"
-            description="Practiced Python programming, explored core programming concepts, and strengthened problem-solving skills through practical tasks."
-            delay={200}
+            description={
+              <ul className="list-disc list-inside space-y-1 text-slate-300">
+                <li>Practiced core Python programming and object-oriented concepts.</li>
+                <li>Solved practical coding tasks and improved problem-solving skills.</li>
+                <li>Developed web scraping scripts using Python to extract and structure data.</li>
+              </ul>}
+              delay={200}
           />
         </div>
       </div>

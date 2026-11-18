@@ -16,29 +16,29 @@ const certifications = [
   {
     title: "Python Programming",
     // PASTE ORIGINAL ISSUER (e.g. Coursera / Udemy / Infosys Springboard)
-    issuer: "Issuing Organization",
-    date: "April 2025",
-    type: "Image",
+    issuer: "Cybernaut Edu-Tech",
+    date: "August 2024",
+    type: "PDF",
     // PASTE ORIGINAL FILE IN public/certificates/python-certificate.jpg OR PASTE LINK
-    link: "/certificates/python-certificate.jpg",
+    link: "/certificates/Python_Certificate.pdf",
   },
   {
-    title: "Web Development",
+    title: "Java Programming",
     // PASTE ORIGINAL ISSUER
-    issuer: "Issuing Organization",
-    date: "June 2025",
+    issuer: "Cybernaut Edu-Tech",
+    date: "May 2025",
     type: "PDF",
     // PASTE ORIGINAL FILE IN public/certificates/web-certificate.pdf OR PASTE LINK
-    link: "/certificates/web-certificate.pdf",
+    link: "/certificates/Java_Certificate.pdf",
   },
   {
-    title: "Full Stack Development",
+    title: "C++ Programming",
     // PASTE ORIGINAL ISSUER
-    issuer: "Issuing Organization",
-    date: "October 2025",
-    type: "Image",
+    issuer: "Cybernaut Edu-Tech",
+    date: "April 2024",
+    type: "PDF",
     // PASTE ORIGINAL FILE IN public/certificates/fullstack-certificate.jpg OR PASTE LINK
-    link: "/certificates/fullstack-certificate.jpg",
+    link: "/certificates/C++_Certificate.pdf",
   },
 ];
 

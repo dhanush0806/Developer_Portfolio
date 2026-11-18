@@ -15,7 +15,7 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
         
         {/* Left Column: Photo + Professional Info */}
         <div
-          className={`lg:col-span-5 flex flex-col items-center space-y-5 transition-all duration-1000 ${
+          className={`lg:col-span-5 flex flex-row items-center gap-4 lg:flex-col lg:gap-5 transition-all duration-1000 ${
             heroVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >
@@ -25,7 +25,7 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
             <div className="absolute inset-0 bg-cyan-500/25 rounded-full blur-2xl group-hover:bg-cyan-400/35 transition-all duration-500 animate-pulse pointer-events-none -z-10" />
 
             {/* Circular Profile Frame */}
-            <div className="relative w-60 h-60 sm:w-68 sm:h-68 md:w-76 md:h-76 rounded-full overflow-hidden border-4 border-cyan-500/40 bg-slate-900 shadow-[0_0_35px_rgba(6,182,212,0.25)] transition-all duration-500 group-hover:scale-105 group-hover:border-cyan-400">
+            <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-cyan-500/40 bg-slate-900 shadow-[0_0_35px_rgba(6,182,212,0.25)] transition-all duration-500 group-hover:scale-105 group-hover:border-cyan-400">
               {!imgError ? (
                 <img
                   src={heroImage}
@@ -45,7 +45,7 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
           </div>
 
           {/* Details below Photo with Single Open-to-Work Status Badge */}
-          <div className="flex flex-col items-center text-center space-y-2 pt-1 w-full">
+          <div className="flex flex-col items-start text-left space-y-2 pt-1 flex-1 min-w-0 lg:items-center lg:text-center">
             {/* Name */}
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               Dhanush K
@@ -94,7 +94,7 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
           {/* Headline */}
           <div className="space-y-3">
   <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
-   Hello, I'm< br />
+   Hi, I'm< br />
     <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-gradient-x">
       Dhanush K
     </span>
