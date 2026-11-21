@@ -72,7 +72,7 @@ export const HeroSection = ({ heroVisible, scrollTo }) => {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
                 </span>
                 <span>Open to Work</span>
-                <span className="text-emerald-500/60 font-bold">•</span>
+                <span className="text-emerald-500/60 font-bold">|</span>
                 <span>Immediate Joiner</span>
               </span>
             </div>
